@@ -3,7 +3,9 @@
 
 [Click here to Visit ](https://myntra-clone-nu-one.vercel.app/)
 
->Note: Please note that this is just frontend and data appearing are stored in already. so it only work without reseting tab. As shown in below video  
+>Note: Please note that this is just frontend and data appearing are stored in already. so it only work without reseting tab. As shown in below video
+>[![Demo Video]()](https://vimeo.com/924978913?share=copy)
+
 
 
 This Project just created for learning purpose and its just and frontend with react + vite.
