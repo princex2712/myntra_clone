@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { itemsActions } from "../store/itemSlice";
 import { fetchStatusActions } from "../store/fetchStatusSlice";
+import itemsData from "../data/items.json"; // Import the JSON data
 
 const FetchItems = () => {
   const fetchStatus = useSelector((store) => store.fetchStatus);
@@ -10,24 +11,18 @@ const FetchItems = () => {
   useEffect(() => {
     if (fetchStatus.fetchDone) return;
 
-    const controller = new AbortController();
-    const signal = controller.signal;
-
     dispatch(fetchStatusActions.markFetchingStarted());
-    fetch("http://localhost:8080/items", { signal })
-      .then((res) => res.json())
-      .then(({ items }) => {
-        dispatch(fetchStatusActions.markFetchDone());
-        dispatch(fetchStatusActions.markFetchingFinished());
-        dispatch(itemsActions.addInitialItems(items[0]));
-      });
 
-    return () => {
-      controller.abort();
-    };
-  }, [fetchStatus]);
+    // Simulate fetch by using imported JSON data
+    setTimeout(() => {
+      dispatch(fetchStatusActions.markFetchDone());
+      dispatch(fetchStatusActions.markFetchingFinished());
+      dispatch(itemsActions.addInitialItems(itemsData.items[0]));
+    }, 1000); // Simulate network delay with setTimeout
 
-  return <></>;
+  }, [fetchStatus, dispatch]);
+
+  return null; // No need to render anything from this component
 };
 
 export default FetchItems;
