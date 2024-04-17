@@ -62,6 +62,6 @@ This Project just created for learning purpose and its just and frontend with re
      ```
    - This command will start the development server, and you should be able to access the project in your web browser at the specified address (usually `http://localhost:3000`).
 
-Now check default port or cntrl+click on the link on cmd to open on your browser. 
+Now check default port or cntrl+click on the link on cmd to open on your browser...
 
 
